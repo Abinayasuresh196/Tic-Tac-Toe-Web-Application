@@ -1,0 +1,48 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe - Welcome</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .cell.win {
+      background-color: #2f634c !important;
+      animation: blink 0.4s ease-in-out 0s 4 alternate;
+    }
+
+    @keyframes blink {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body class="welcome-page">
+  <div class="container">
+    <img src="assets/images/logo.png" alt="Game Logo" class="logo" />
+    <h1>Welcome to Tic Tac Toe</h1>
+    <p>Select a game mode:</p>
+    <div class="buttons">
+      <button onclick="startGame('ai')">
+        <img src="assets/icons/plus.png" alt="AI"> Play vs AI
+      </button>
+      <button onclick="startGame('2p')">
+        <img src="assets/icons/up.png" alt="2P"> Two Players
+      </button>
+      <button onclick="window.location.href='about.html'">
+        <img src="assets/icons/home.png" alt="About"> About
+      </button>
+      <button onclick="window.location.href='help.html'">
+        <img src="assets/icons/up.png" alt="Help"> Help
+      </button>
+    </div>
+  </div>
+  <script>
+    function startGame(mode) {
+      localStorage.setItem('gameMode', mode);
+      window.location.href = 'game.html';
+    }
+  </script>
+</body>
+</html>

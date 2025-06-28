@@ -1,0 +1,142 @@
+/* Basic layout styles for all pages */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+.container {
+  padding: 30px;
+  background-color: rgba(202, 148, 186, 0.85);
+  border-radius: 16px;
+  max-width: 700px;
+  margin: 60px auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  margin: 10px auto;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background-color: #9b3d99;
+  color: rgb(249, 248, 248);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 80%;
+}
+
+button img {
+  width: 20px;
+  height: 20px;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.welcome-page {
+  background-color: #ffc0cb;
+  background-image: url('assets/images/welcome-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@keyframes fadeBg {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* About and Help Pages */
+.about-page,
+.help-page {
+  background: url('assets/images/background-abstract.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+/* Game Page */
+.game-page {
+  background: url('assets/images/game-board-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.game-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+}
+
+header.game-header {
+  position: relative;
+  padding: 40px 0 20px;
+  text-align: center;
+}
+
+.corner-icon {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  object-fit: contain;
+  top: 40px;
+}
+
+.corner-icon.left {
+  left: 20px;
+}
+
+.corner-icon.right {
+  right: 20px;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 5px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cell.win {
+  background-color: #825770 !important;
+  animation: blink 0.4s ease-in-out 0s 4 alternate;
+}
+
+@keyframes blink {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+.status {
+  font-size: 20px;
+  margin-top: 20px;
+}
